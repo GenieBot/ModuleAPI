@@ -2,7 +2,7 @@ package io.sponges.bot.module.test;
 
 import io.sponges.bot.api.cmd.Command;
 import io.sponges.bot.api.cmd.CommandRequest;
-import io.sponges.bot.api.event.events.ChatMessageEvent;
+import io.sponges.bot.api.event.events.user.UserChatEvent;
 import io.sponges.bot.api.module.Module;
 
 public class MyModule extends Module {
@@ -15,7 +15,7 @@ public class MyModule extends Module {
     public void onEnable() {
         getLogger().log("Starting...");
 
-        getEventManager().register(ChatMessageEvent.class, event -> {
+        getEventManager().register(UserChatEvent.class, event -> {
             getLogger().log("OMG A MESSAGE: " + event.getContent());
         });
 
