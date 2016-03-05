@@ -2,10 +2,12 @@ package io.sponges.bot.api.module;
 
 import io.sponges.bot.api.cmd.CommandManager;
 import io.sponges.bot.api.event.framework.EventManager;
+import io.sponges.bot.api.server.Server;
 
 public abstract class Module {
 
     private ModuleLogger moduleLogger;
+    private Server server;
     private EventManager eventManager;
     private CommandManager commandManager;
 
@@ -37,8 +39,9 @@ public abstract class Module {
      * @param eventManager server event manager
      * @param commandManager server command manager
      */
-    public void init(ModuleLogger moduleLogger, EventManager eventManager, CommandManager commandManager) {
+    public void init(ModuleLogger moduleLogger, Server server, EventManager eventManager, CommandManager commandManager) {
         this.moduleLogger = moduleLogger;
+        this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
     }
@@ -69,6 +72,14 @@ public abstract class Module {
     }
 
     /**
+     * Gets the server instance
+     * @return Server instance
+     */
+    public Server getServer() {
+        return server;
+    }
+
+    /**
      * Gets the server's event manager instance
      * @return EventManager instance
      */
@@ -78,7 +89,7 @@ public abstract class Module {
 
     /**
      * Gets the server's command manager instance
-     * @return COmmandManager instance
+     * @return CommandManager instance
      */
     public CommandManager getCommandManager() {
         return commandManager;

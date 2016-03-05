@@ -1,7 +1,9 @@
 package io.sponges.bot.api.entities;
 
+import io.sponges.bot.api.entities.channel.Channel;
 import io.sponges.bot.api.entities.channel.PrivateChannel;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface User {
@@ -9,6 +11,8 @@ public interface User {
     String getId();
     
     Network getNetwork();
+
+    List<Channel> getChannels();
 
     Optional<PrivateChannel> getPrivateChannel();
 

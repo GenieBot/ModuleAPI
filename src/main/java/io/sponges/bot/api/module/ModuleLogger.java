@@ -11,7 +11,7 @@ public final class ModuleLogger {
     }
 
     public void log(String message) {
-        System.out.printf("[%s] %s\n", name, message);
+        System.out.printf("[%s] %s\r\n", name, message);
     }
 
 }

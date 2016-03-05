@@ -1,19 +1,19 @@
 package io.sponges.bot.api.event.events.user;
 
-import io.sponges.bot.api.entities.channel.Channel;
 import io.sponges.bot.api.entities.Client;
 import io.sponges.bot.api.entities.Network;
 import io.sponges.bot.api.entities.User;
+import io.sponges.bot.api.entities.channel.GroupChannel;
 
 public final class UserKickEvent extends UserRemoveEvent {
 
     private final Client client;
     private final Network network;
-    private final Channel channel;
+    private final GroupChannel channel;
     private final User user;
     private final User initiator;
 
-    public UserKickEvent(Client client, Network network, Channel channel, User user, User initiator) {
+    public UserKickEvent(Client client, Network network, GroupChannel channel, User user, User initiator) {
         this.client = client;
         this.network = network;
         this.channel = channel;
@@ -29,7 +29,7 @@ public final class UserKickEvent extends UserRemoveEvent {
         return network;
     }
 
-    public Channel getChannel() {
+    public GroupChannel getChannel() {
         return channel;
     }
 

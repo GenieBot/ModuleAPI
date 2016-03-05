@@ -1,6 +1,7 @@
 package io.sponges.bot.api.entities.channel;
 
 import io.sponges.bot.api.entities.Network;
+import io.sponges.bot.api.storage.ChannelData;
 
 public interface Channel {
 
@@ -9,5 +10,7 @@ public interface Channel {
     String getId();
 
     Network getNetwork();
+
+    ChannelData getData();
 
 }
