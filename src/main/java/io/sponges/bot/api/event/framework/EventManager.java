@@ -25,7 +25,7 @@ public interface EventManager {
      * Sends a new event
      * @param event the event to send
      * @param <T> class extending Event
-     * @return TODO explain what #post returns
+     * @return the event
      */
     <T extends Event> T post(T event);
 
