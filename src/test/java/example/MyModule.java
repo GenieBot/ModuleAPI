@@ -1,4 +1,4 @@
-package io.sponges.bot.module.test;
+package java.example;
 
 import io.sponges.bot.api.cmd.Command;
 import io.sponges.bot.api.cmd.CommandRequest;
@@ -16,7 +16,7 @@ public class MyModule extends Module {
         getLogger().log("Starting...");
 
         getEventManager().register(UserChatEvent.class, event -> {
-            getLogger().log("OMG A MESSAGE: " + event.getContent());
+            getLogger().log("OMG A MESSAGE: " + event.getMessage().getContent());
         });
 
         getCommandManager().registerCommand(new Command("gives danke memes", "memes", "m", "danks") {

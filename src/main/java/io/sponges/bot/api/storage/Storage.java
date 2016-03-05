@@ -1,6 +1,6 @@
 package io.sponges.bot.api.storage;
 
-import io.sponges.bot.api.entities.Channel;
+import io.sponges.bot.api.entities.channel.Channel;
 import io.sponges.bot.api.entities.Network;
 
 import java.util.function.Consumer;

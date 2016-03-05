@@ -1,6 +1,6 @@
 package io.sponges.bot.api.event.events.user;
 
-import io.sponges.bot.api.entities.Channel;
+import io.sponges.bot.api.entities.channel.Channel;
 import io.sponges.bot.api.entities.Client;
 import io.sponges.bot.api.entities.Network;
 import io.sponges.bot.api.entities.User;

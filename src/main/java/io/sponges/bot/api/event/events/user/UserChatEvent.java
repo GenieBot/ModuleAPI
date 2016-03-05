@@ -1,6 +1,7 @@
 package io.sponges.bot.api.event.events.user;
 
 import io.sponges.bot.api.entities.*;
+import io.sponges.bot.api.entities.channel.Channel;
 
 public final class UserChatEvent extends UserEvent {
 
