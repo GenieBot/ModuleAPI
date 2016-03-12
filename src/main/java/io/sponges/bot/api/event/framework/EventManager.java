@@ -1,5 +1,7 @@
 package io.sponges.bot.api.event.framework;
 
+import io.sponges.bot.api.module.Module;
+
 import java.util.function.Consumer;
 
 public interface EventManager {
@@ -11,7 +13,7 @@ public interface EventManager {
      * @param <T> class extending Event
      * @return if registration was successful
      */
-    <T extends Event> boolean register(Class<T> event, Consumer<T> consumer);
+    <T extends Event> boolean register(Module module, Class<T> event, Consumer<T> consumer);
 
     /**
      * Un-registers an event listener
@@ -20,6 +22,8 @@ public interface EventManager {
      * @return if unregistration was successful
      */
     <T extends Event> boolean unregister(Consumer<T> consumer);
+
+    void unregister(Module module);
 
     /**
      * Sends a new event

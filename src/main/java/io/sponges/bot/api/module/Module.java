@@ -10,6 +10,7 @@ public abstract class Module {
     private Server server;
     private EventManager eventManager;
     private CommandManager commandManager;
+    private ModuleManager moduleManager;
 
     private final String id, version;
 
@@ -39,10 +40,12 @@ public abstract class Module {
      * @param eventManager server event manager
      * @param commandManager server command manager
      */
-    public void init(Server server, EventManager eventManager, CommandManager commandManager) {
+    public void init(Server server, EventManager eventManager, CommandManager commandManager,
+                     ModuleManager moduleManager) {
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
+        this.moduleManager = moduleManager;
     }
 
     /**
@@ -92,5 +95,9 @@ public abstract class Module {
      */
     public CommandManager getCommandManager() {
         return commandManager;
+    }
+
+    public ModuleManager getModuleManager() {
+        return moduleManager;
     }
 }
