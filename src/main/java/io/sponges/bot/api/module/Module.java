@@ -21,6 +21,7 @@ public abstract class Module {
     public Module(String id, String version) {
         this.id = id;
         this.version = version;
+        this.moduleLogger = new ModuleLogger(this);
     }
 
     /**
@@ -35,12 +36,10 @@ public abstract class Module {
 
     /**
      * Internal method to instantiate module dependencies
-     * @param moduleLogger module logger instance
      * @param eventManager server event manager
      * @param commandManager server command manager
      */
-    public void init(ModuleLogger moduleLogger, Server server, EventManager eventManager, CommandManager commandManager) {
-        this.moduleLogger = moduleLogger;
+    public void init(Server server, EventManager eventManager, CommandManager commandManager) {
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;

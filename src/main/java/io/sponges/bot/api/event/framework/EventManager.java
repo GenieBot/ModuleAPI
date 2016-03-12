@@ -17,7 +17,7 @@ public interface EventManager {
      * Un-registers an event listener
      * @param consumer event listener
      * @param <T> class extending Event
-     * @return if un-registration was successful
+     * @return if unregistration was successful
      */
     <T extends Event> boolean unregister(Consumer<T> consumer);
 
