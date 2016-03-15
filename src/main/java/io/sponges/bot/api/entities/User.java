@@ -14,6 +14,8 @@ public interface User {
 
     List<Channel> getChannels();
 
+    //Role getRole(); TODO implement this
+
     Optional<PrivateChannel> getPrivateChannel();
 
     Optional<String> getUsername();

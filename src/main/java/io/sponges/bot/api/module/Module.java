@@ -3,6 +3,7 @@ package io.sponges.bot.api.module;
 import io.sponges.bot.api.cmd.CommandManager;
 import io.sponges.bot.api.event.framework.EventManager;
 import io.sponges.bot.api.server.Server;
+import io.sponges.bot.api.storage.Storage;
 
 public abstract class Module {
 
@@ -11,6 +12,7 @@ public abstract class Module {
     private EventManager eventManager;
     private CommandManager commandManager;
     private ModuleManager moduleManager;
+    private Storage storage;
 
     private final String id, version;
 
@@ -41,11 +43,12 @@ public abstract class Module {
      * @param commandManager server command manager
      */
     public void init(Server server, EventManager eventManager, CommandManager commandManager,
-                     ModuleManager moduleManager) {
+                     ModuleManager moduleManager, Storage storage) {
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
         this.moduleManager = moduleManager;
+        this.storage = storage;
     }
 
     /**
@@ -99,5 +102,9 @@ public abstract class Module {
 
     public ModuleManager getModuleManager() {
         return moduleManager;
+    }
+
+    public Storage getStorage() {
+        return storage;
     }
 }

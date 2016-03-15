@@ -1,7 +1,7 @@
 package io.sponges.bot.api.entities.channel;
 
 import io.sponges.bot.api.entities.Network;
-import io.sponges.bot.api.storage.ChannelData;
+import io.sponges.bot.api.storage.data.ChannelData;
 
 public interface Channel {
 

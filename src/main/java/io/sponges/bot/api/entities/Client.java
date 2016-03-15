@@ -6,6 +6,8 @@ public interface Client {
 
     String getId();
 
+    String getDefaultPrefix();
+
     NetworkManager getNetworkManager();
 
 }
