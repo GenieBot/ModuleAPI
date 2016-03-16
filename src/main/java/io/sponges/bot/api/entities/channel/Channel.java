@@ -7,6 +7,8 @@ public interface Channel {
 
     void sendMessage(String message);
 
+    void sendChatMessage(String message);
+
     String getId();
 
     Network getNetwork();
