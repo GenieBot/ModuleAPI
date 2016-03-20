@@ -27,9 +27,10 @@ Dependency:
 	...
 </dependencies>
 ```
-The version `x` should be replaced with the latest built commit. You can find these on https://jitpack.io/#Sponges/BotModuleAPI
+The version `x` should be replaced with the latest built commit. You can find these on the project commits page (https://github.com/SpongyBot/ModuleAPI/commits/master)
+ or on JitPack (https://jitpack.io/#Sponges/BotModuleAPI).
 
-Example: `41bae81a4d`
+Example: `<version>41bae81a4d</version>`
 
 ### Usage
 #### Simple module:
