@@ -14,6 +14,8 @@ public interface User {
 
     boolean isGlobalAdmin();
 
+    boolean isOp();
+
     List<Channel> getChannels();
 
     Role getRole();
