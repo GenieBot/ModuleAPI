@@ -8,9 +8,11 @@ public class NetworkData extends Data {
 
     public NetworkData(Network network) {
         this.network = network;
+        network.getRoleManager();
     }
 
     public Network getNetwork() {
         return network;
     }
+
 }

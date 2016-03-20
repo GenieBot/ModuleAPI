@@ -1,19 +1,22 @@
 package io.sponges.bot.api.entities;
 
-import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 
 public interface Role {
 
     String getId();
 
-    String getName();
+    Optional<String> getName();
 
-    Collection<Permission> getPermissions();
+    void setName(String name);
 
-    void addPermission(Permission permission);
+    List<String> getPermissions();
+
+    void addPermission(String permission);
 
     void removePermission(String permission);
 
-    void removePermission(Permission permission);
+    boolean hasPermission(String node);
 
 }

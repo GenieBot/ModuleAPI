@@ -5,7 +5,31 @@ SpongyBot's public module API
 [![](https://jitpack.io/v/Sponges/BotModuleAPI.svg)](https://jitpack.io/#Sponges/BotModuleAPI)
 
 ### Maven
-Coming soon
+Repository:
+```xml
+<repositories>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+	...
+</repositories>
+```
+
+Dependency:
+```xml
+<dependencies>
+	<dependency>
+		<groupId>com.github.Sponges</groupId>
+    	<artifactId>BotModuleAPI</artifactId>
+    	<version>x</version>
+	</dependency>
+	...
+</dependencies>
+```
+The version `x` should be replaced with the latest built commit. You can find these on https://jitpack.io/#Sponges/BotModuleAPI
+
+Example: `41bae81a4d`
 
 ### Usage
 #### Simple module:

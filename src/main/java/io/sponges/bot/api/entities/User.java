@@ -12,9 +12,15 @@ public interface User {
     
     Network getNetwork();
 
+    boolean isGlobalAdmin();
+
     List<Channel> getChannels();
 
-    //Role getRole(); TODO implement this
+    Role getRole();
+
+    void setRole(Role role);
+
+    boolean hasPermission(String permission);
 
     Optional<PrivateChannel> getPrivateChannel();
 
