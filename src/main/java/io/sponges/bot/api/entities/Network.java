@@ -24,4 +24,8 @@ public interface Network {
 
     User getUser(String id);
 
+    void kickUser(User user);
+
+    void kickUser(String id);
+
 }

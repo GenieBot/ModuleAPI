@@ -24,6 +24,8 @@ public interface User {
 
     boolean hasPermission(String permission);
 
+    void kick();
+
     Optional<PrivateChannel> getPrivateChannel();
 
     Optional<String> getUsername();
