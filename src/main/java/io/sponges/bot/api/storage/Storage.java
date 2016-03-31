@@ -27,4 +27,6 @@ public interface Storage {
 
     boolean isPresent(String key);
 
+    void increment(String key, Consumer<Long> callback);
+
 }
