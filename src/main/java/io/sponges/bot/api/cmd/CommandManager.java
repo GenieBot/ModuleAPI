@@ -14,4 +14,8 @@ public interface CommandManager {
 
     Collection<Command> getCommands();
 
+    Collection<String> getNames();
+
+    Command getCommand(String name);
+
 }
