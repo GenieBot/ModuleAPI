@@ -80,7 +80,7 @@ public void onEnable() {
 }
 ```
 
-Events:
+#### Events:
 ```java
 EventManager manager = getEventManager();
 // "this" is your module instance. Replace SomeEvent with the event you want to listen to.
