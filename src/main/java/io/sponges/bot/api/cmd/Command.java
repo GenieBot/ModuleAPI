@@ -7,6 +7,8 @@ public abstract class Command {
 
     private final List<String> permissions = new ArrayList<>();
 
+    private volatile boolean globalDisabled = false;
+
     private final String description;
     private final String[] names;
 
@@ -36,4 +38,9 @@ public abstract class Command {
     public boolean requiresOp() {
         return false;
     }
+
+    public boolean isGlobalDisabled() {
+        return globalDisabled;
+    }
+
 }
