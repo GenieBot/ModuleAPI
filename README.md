@@ -80,6 +80,15 @@ public void onEnable() {
 }
 ```
 
+#### Events:
+```java
+EventManager manager = getEventManager();
+// "this" is your module instance. Replace SomeEvent with the event you want to listen to.
+manager.register(this, SomeEvent.class, event -> { 
+    // your code goes here 
+});
+```
+
 ### Documentation
 Will add javadocs at some point.
 
