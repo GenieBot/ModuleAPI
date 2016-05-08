@@ -14,6 +14,10 @@ public interface CommandManager {
 
     Collection<Command> getCommands();
 
+    boolean hasCommands(Module module);
+
+    Collection<Command> getCommands(Module module);
+
     Collection<String> getNames();
 
     Command getCommand(String name);
