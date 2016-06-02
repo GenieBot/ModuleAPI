@@ -8,6 +8,7 @@ public abstract class Command {
     private final List<String> permissions = new ArrayList<>();
 
     private volatile boolean globalDisabled = false;
+    private String networkOnly = null;
 
     private final String description;
     private final String[] names;
@@ -43,4 +44,15 @@ public abstract class Command {
         return globalDisabled;
     }
 
+    public boolean isLimitedToNetwork() {
+        return networkOnly != null;
+    }
+
+    public String getNetworkOnly() {
+        return networkOnly;
+    }
+
+    public void setNetworkOnly(String networkOnly) {
+        this.networkOnly = networkOnly;
+    }
 }

@@ -13,6 +13,8 @@ public interface Channel {
 
     Network getNetwork();
 
-    ChannelData getData();
+    io.sponges.bot.api.entities.data.ChannelData getChannelData();
+
+    ChannelData getData(); // TODO remove fucking storage bullshit
 
 }

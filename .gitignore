@@ -1,3 +1,4 @@
 .idea
 *.iml
-src/test/java/example
+dependency-reduced-pom.xml
+target

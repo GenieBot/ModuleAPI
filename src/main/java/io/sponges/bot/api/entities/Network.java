@@ -2,13 +2,10 @@ package io.sponges.bot.api.entities;
 
 import io.sponges.bot.api.entities.manager.ChannelManager;
 import io.sponges.bot.api.entities.manager.RoleManager;
+import io.sponges.bot.api.entities.manager.UserManager;
 import io.sponges.bot.api.storage.data.NetworkData;
 
-import java.util.Map;
-
 public interface Network {
-
-    Map<String, User> getUsers();
 
     String getId();
 
@@ -18,14 +15,8 @@ public interface Network {
 
     ChannelManager getChannelManager();
 
+    UserManager getUserManager();
+
     RoleManager getRoleManager();
-
-    boolean isUser(String id);
-
-    User getUser(String id);
-
-    void kickUser(User user);
-
-    void kickUser(String id);
 
 }

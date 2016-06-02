@@ -2,6 +2,7 @@ package io.sponges.bot.api.entities.manager;
 
 import io.sponges.bot.api.entities.Network;
 import io.sponges.bot.api.entities.Role;
+import io.sponges.bot.api.entities.User;
 
 import java.util.Collection;
 
@@ -18,5 +19,9 @@ public interface RoleManager {
     Role getRole(String id);
 
     void removeRole(String id);
+
+    boolean hasUsers(Role role);
+
+    Collection<User> getUsersWithRole(Role role);
 
 }

@@ -21,7 +21,7 @@ public abstract class Module {
     private final String id, version;
 
     public Module(String id, String version) {
-        this.id = id;
+        this.id = id.toLowerCase();
         this.version = version;
         this.moduleLogger = new ModuleLogger(this);
     }

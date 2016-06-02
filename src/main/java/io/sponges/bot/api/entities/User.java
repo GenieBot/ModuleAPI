@@ -1,10 +1,9 @@
 package io.sponges.bot.api.entities;
 
 import io.sponges.bot.api.entities.channel.Channel;
-import io.sponges.bot.api.entities.channel.PrivateChannel;
+import io.sponges.bot.api.entities.data.UserData;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface User {
 
@@ -12,7 +11,7 @@ public interface User {
     
     Network getNetwork();
 
-    boolean isGlobalAdmin();
+    boolean isPlatformAdmin();
 
     boolean isOp();
 
@@ -26,16 +25,6 @@ public interface User {
 
     void kick();
 
-    Optional<PrivateChannel> getPrivateChannel();
-
-    Optional<String> getUsername();
-
-    Optional<String> getDisplayName();
-
-    Optional<String> getProfileURL();
-
-    Optional<String> getProfileImage();
-
-    Optional<String> getProfileMood();
+    UserData getData();
 
 }
