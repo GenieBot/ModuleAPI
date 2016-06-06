@@ -1,20 +1,21 @@
 package io.sponges.bot.api.entities.channel;
 
 import io.sponges.bot.api.entities.Network;
-import io.sponges.bot.api.storage.data.ChannelData;
+import io.sponges.bot.api.entities.data.ChannelData;
+import io.sponges.bot.api.storage.DataObject;
 
 public interface Channel {
-
-    void sendMessage(String message);
-
-    void sendChatMessage(String message);
 
     String getId();
 
     Network getNetwork();
 
-    io.sponges.bot.api.entities.data.ChannelData getChannelData();
+    ChannelData getChannelData();
 
-    ChannelData getData(); // TODO remove fucking storage bullshit
+    DataObject getData();
+
+    void sendMessage(String message);
+
+    void sendChatMessage(String message);
 
 }

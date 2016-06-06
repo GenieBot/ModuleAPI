@@ -2,6 +2,7 @@ package io.sponges.bot.api.entities;
 
 import io.sponges.bot.api.entities.data.ClientData;
 import io.sponges.bot.api.entities.manager.NetworkManager;
+import io.sponges.bot.api.storage.DataObject;
 
 import java.util.function.Consumer;
 
@@ -16,6 +17,8 @@ public interface Client {
     NetworkManager getNetworkManager();
 
     ClientData getClientData();
+
+    DataObject getData();
 
     void sendMessage(String message, Consumer<String> callback);
 

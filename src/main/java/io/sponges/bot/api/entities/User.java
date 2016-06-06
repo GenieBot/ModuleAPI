@@ -2,6 +2,7 @@ package io.sponges.bot.api.entities;
 
 import io.sponges.bot.api.entities.channel.Channel;
 import io.sponges.bot.api.entities.data.UserData;
+import io.sponges.bot.api.storage.DataObject;
 
 import java.util.List;
 
@@ -11,20 +12,22 @@ public interface User {
     
     Network getNetwork();
 
-    boolean isPlatformAdmin();
-
-    boolean isOp();
-
     List<Channel> getChannels();
 
     Role getRole();
 
-    void setRole(Role role);
+    UserData getUserData();
+
+    DataObject getData();
+
+    boolean isPlatformAdmin();
+
+    boolean isOp();
 
     boolean hasPermission(String permission);
 
-    void kick();
+    void setRole(Role role);
 
-    UserData getData();
+    void kick();
 
 }
