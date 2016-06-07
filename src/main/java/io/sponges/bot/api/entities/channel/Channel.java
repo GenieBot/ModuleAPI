@@ -1,10 +1,11 @@
 package io.sponges.bot.api.entities.channel;
 
+import io.sponges.bot.api.entities.Entity;
 import io.sponges.bot.api.entities.Network;
 import io.sponges.bot.api.entities.data.ChannelData;
 import io.sponges.bot.api.storage.DataObject;
 
-public interface Channel {
+public interface Channel extends Entity {
 
     String getId();
 

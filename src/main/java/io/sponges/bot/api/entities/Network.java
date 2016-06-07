@@ -6,7 +6,7 @@ import io.sponges.bot.api.entities.manager.RoleManager;
 import io.sponges.bot.api.entities.manager.UserManager;
 import io.sponges.bot.api.storage.DataObject;
 
-public interface Network {
+public interface Network extends Entity {
 
     String getId();
 

@@ -6,7 +6,7 @@ import io.sponges.bot.api.storage.DataObject;
 
 import java.util.List;
 
-public interface User {
+public interface User extends Entity {
 
     String getId();
     

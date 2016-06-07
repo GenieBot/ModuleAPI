@@ -1,11 +1,12 @@
 package io.sponges.bot.api.storage;
 
+import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 public class DataObject {
 
-    private final Map<String, Object> mappings = new ConcurrentHashMap<>();
+    private final Map<String, Object> mappings = new HashMap<>();
+    private final Object lock = new Object();
 
     private final String key;
 
@@ -14,15 +15,23 @@ public class DataObject {
     }
 
     public boolean exists(String key) {
-        return mappings.containsKey(key);
+        synchronized (lock) {
+            return mappings.containsKey(key);
+        }
     }
 
     public Object get(String key) {
-        return mappings.get(key);
+        synchronized (lock) {
+            return mappings.get(key);
+        }
     }
 
-    public Object set(String key, Object value) {
-        return mappings.put(key, value);
+    public Object set(Storage storage, String key, Object value) {
+        synchronized (lock) {
+            Object object = mappings.put(key, value);
+            storage.save(this);
+            return object;
+        }
     }
 
     public String getKey() {

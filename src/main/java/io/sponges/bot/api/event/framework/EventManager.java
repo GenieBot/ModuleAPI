@@ -33,8 +33,6 @@ public interface EventManager {
      */
     <T extends Event> T post(T event);
 
-    <T extends Event> T post(T event, String messageId);
-
     void registerCancelListener(CancelListener listener);
 
     void unregisterCancelListener(CancelListener listener);
