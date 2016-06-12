@@ -10,6 +10,10 @@ public class DataObject {
 
     private final String key;
 
+    public DataObject() {
+        this.key = null;
+    }
+
     public DataObject(String key) {
         this.key = key;
     }
@@ -29,6 +33,14 @@ public class DataObject {
     public Object set(Storage storage, String key, Object value) {
         synchronized (lock) {
             Object object = mappings.put(key, value);
+            storage.save(this);
+            return object;
+        }
+    }
+
+    public Object remove(Storage storage, String key) {
+        synchronized (lock) {
+            Object object = mappings.remove(key);
             storage.save(this);
             return object;
         }
