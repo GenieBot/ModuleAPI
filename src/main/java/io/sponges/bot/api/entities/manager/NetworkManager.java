@@ -18,4 +18,6 @@ public interface NetworkManager {
 
     void loadNetwork(String id, Consumer<Network> callback);
 
+    Network loadNetworkSync(String id);
+
 }

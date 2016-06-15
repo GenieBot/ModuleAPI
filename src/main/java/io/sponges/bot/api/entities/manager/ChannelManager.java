@@ -22,4 +22,6 @@ public interface ChannelManager {
 
     void loadChannel(String channelId, Consumer<Channel> callback);
 
+    Channel loadChannelSync(String channelId);
+
 }

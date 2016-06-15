@@ -17,4 +17,6 @@ public interface UserManager {
 
     void loadUser(String id, Consumer<User> callback);
 
+    User loadUserSync(String id);
+
 }

@@ -30,19 +30,33 @@ public class DataObject {
         }
     }
 
-    public Object set(Storage storage, String key, Object value) {
+    public DataObject set(String key, Object value) {
         synchronized (lock) {
-            Object object = mappings.put(key, value);
-            storage.save(this);
-            return object;
+            mappings.put(key, value);
+            return this;
         }
     }
 
-    public Object remove(Storage storage, String key) {
+    public DataObject set(Storage storage, String key, Object value) {
+        synchronized (lock) {
+            mappings.put(key, value);
+            storage.save(this);
+            return this;
+        }
+    }
+
+    public DataObject remove(Storage storage, String key) {
         synchronized (lock) {
             Object object = mappings.remove(key);
             storage.save(this);
-            return object;
+            return this;
+        }
+    }
+
+    public DataObject save(Storage storage) {
+        synchronized (lock) {
+            storage.save(this);
+            return this;
         }
     }
 

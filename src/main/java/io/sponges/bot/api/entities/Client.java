@@ -22,4 +22,6 @@ public interface Client {
 
     void sendMessage(String message, Consumer<String> callback);
 
+    String sendMessageSync(String message);
+
 }

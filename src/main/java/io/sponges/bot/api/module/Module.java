@@ -5,6 +5,7 @@ import io.sponges.bot.api.entities.manager.ClientManager;
 import io.sponges.bot.api.event.framework.EventManager;
 import io.sponges.bot.api.server.Server;
 import io.sponges.bot.api.storage.Storage;
+import io.sponges.bot.api.webhook.WebhookManager;
 import io.sponges.proxypool.ProxyPool;
 
 public abstract class Module {
@@ -17,6 +18,7 @@ public abstract class Module {
     private Storage storage;
     private ProxyPool proxyPool;
     private ClientManager clientManager;
+    private WebhookManager webhookManager;
 
     private final String id, version;
 
@@ -30,8 +32,9 @@ public abstract class Module {
 
     public abstract void onDisable();
 
-    public void init(Server server, EventManager eventManager, CommandManager commandManager,
-                     ModuleManager moduleManager, Storage storage, ProxyPool proxyPool, ClientManager clientManager) {
+    private void init(Server server, EventManager eventManager, CommandManager commandManager,
+                     ModuleManager moduleManager, Storage storage, ProxyPool proxyPool, ClientManager clientManager,
+                     WebhookManager webhookManager) {
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
@@ -39,6 +42,7 @@ public abstract class Module {
         this.storage = storage;
         this.proxyPool = proxyPool;
         this.clientManager = clientManager;
+        this.webhookManager = webhookManager;
     }
 
     public String getId() {
@@ -79,5 +83,9 @@ public abstract class Module {
 
     public ClientManager getClientManager() {
         return clientManager;
+    }
+
+    public WebhookManager getWebhookManager() {
+        return webhookManager;
     }
 }
