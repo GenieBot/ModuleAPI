@@ -14,8 +14,6 @@ public interface User extends Entity {
 
     List<Channel> getChannels();
 
-    Role getRole();
-
     UserData getUserData();
 
     DataObject getData();
@@ -25,8 +23,6 @@ public interface User extends Entity {
     boolean isOp();
 
     boolean hasPermission(String permission);
-
-    void setRole(Role role);
 
     void kick();
 
