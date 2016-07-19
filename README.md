@@ -114,4 +114,4 @@ Will add javadocs at some point.
 Ensure all modules are safe for a multi-threaded environment.
 
 ### License
-Working on it
+Module API code is licensed under the MIT license. Full text included in the `LICENSE` file.
