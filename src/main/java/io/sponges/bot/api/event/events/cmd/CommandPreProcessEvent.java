@@ -9,9 +9,8 @@ public final class CommandPreProcessEvent extends CommandEvent {
     private final String[] args;
     private final Command command;
 
-    private volatile boolean cancelled = false;
-
     public CommandPreProcessEvent(CommandRequest commandRequest, String[] args, Command command) {
+        super(true);
         this.commandRequest = commandRequest;
         this.args = args;
         this.command = command;

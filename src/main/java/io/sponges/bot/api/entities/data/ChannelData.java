@@ -6,6 +6,10 @@ public interface ChannelData {
 
     Optional<String> getName();
 
+    void updateName(String name);
+
     Optional<String> getTopic();
+
+    void updateTopic(String topic);
 
 }

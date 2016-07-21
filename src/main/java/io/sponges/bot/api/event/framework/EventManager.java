@@ -35,4 +35,6 @@ public interface EventManager {
 
     <T extends Event> void postAsync(T event);
 
+    <T extends Event> void postAsync(T event, Consumer<Boolean> callback);
+
 }

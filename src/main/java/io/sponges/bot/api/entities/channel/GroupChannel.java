@@ -12,6 +12,4 @@ public interface GroupChannel extends Channel {
 
     User getUser(String id);
 
-    void setTopic(String topic);
-
 }
