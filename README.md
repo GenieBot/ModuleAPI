@@ -81,6 +81,7 @@ public void onEnable() {
 ```
 
 #### Events:
+Listening to an event:
 ```java
 EventManager manager = getEventManager();
 // "this" is your module instance. Replace SomeEvent with the event you want to listen to.
@@ -89,10 +90,28 @@ manager.register(this, SomeEvent.class, event -> {
 });
 ```
 
+Creating your own event:
+```java
+public class MyEvent extends Event {
+	public MyEvent() {
+		super(true); // true if the event is cancellable
+	}
+}
+```
+
+Firing an event:
+```java
+Event event = new MyEvent(); // dummy event for demonstration
+
+EventManager manager = getEventManager();
+manager.post(event); // fires the event on the same thread (in sync)
+manager.postAsync(event); // fires the event on a new thread (async) - REQUIRED FOR EVENT CANCELLING
+```
+
 ### Documentation
 Will add javadocs at some point.
 
 Ensure all modules are safe for a multi-threaded environment.
 
 ### License
-Working on it
+Module API code is licensed under the MIT license. Full text included in the `LICENSE` file.
