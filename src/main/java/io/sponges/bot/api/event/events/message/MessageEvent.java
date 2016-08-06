@@ -1,22 +1,23 @@
-package io.sponges.bot.api.event.events.user;
+package io.sponges.bot.api.event.events.message;
 
-import io.sponges.bot.api.entities.*;
+import io.sponges.bot.api.entities.Client;
+import io.sponges.bot.api.entities.Network;
+import io.sponges.bot.api.entities.User;
 import io.sponges.bot.api.entities.channel.Channel;
+import io.sponges.bot.api.event.framework.Event;
 
-public final class UserChatEvent extends UserEvent {
+public abstract class MessageEvent extends Event {
 
     private final Client client;
     private final Network network;
     private final Channel channel;
     private final User user;
-    private final Message message;
 
-    public UserChatEvent(Client client, Network network, Channel channel, User user, Message message) {
+    public MessageEvent(Client client, Network network, Channel channel, User user) {
         this.client = client;
         this.network = network;
         this.channel = channel;
         this.user = user;
-        this.message = message;
     }
 
     public Client getClient() {
@@ -33,9 +34,5 @@ public final class UserChatEvent extends UserEvent {
 
     public User getUser() {
         return user;
-    }
-
-    public Message getMessage() {
-        return message;
     }
 }

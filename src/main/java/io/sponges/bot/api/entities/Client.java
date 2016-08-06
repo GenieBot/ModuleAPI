@@ -6,7 +6,7 @@ import io.sponges.bot.api.storage.DataObject;
 
 import java.util.function.Consumer;
 
-public interface Client {
+public interface Client extends Entity {
 
     // TODO client load balancing, peers etc
 
