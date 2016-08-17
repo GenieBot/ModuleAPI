@@ -14,4 +14,8 @@ public final class MessageReceivedEvent extends MessageEvent {
         super(client, network, channel, user);
         this.message = message;
     }
+
+    public ReceivedMessage getMessage() {
+        return message;
+    }
 }
