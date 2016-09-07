@@ -7,7 +7,6 @@ import io.sponges.bot.api.event.framework.EventManager;
 import io.sponges.bot.api.server.Server;
 import io.sponges.bot.api.storage.Storage;
 import io.sponges.bot.api.webhook.WebhookManager;
-import io.sponges.proxypool.ProxyPool;
 
 public abstract class Module {
 
@@ -17,7 +16,6 @@ public abstract class Module {
     private CommandManager commandManager;
     private ModuleManager moduleManager;
     private Storage storage;
-    private ProxyPool proxyPool;
     private ClientManager clientManager;
     private WebhookManager webhookManager;
 
@@ -48,14 +46,13 @@ public abstract class Module {
      * TODO encapsulation of method
      */
     public void init(Server server, EventManager eventManager, CommandManager commandManager,
-                     ModuleManager moduleManager, Storage storage, ProxyPool proxyPool, ClientManager clientManager,
+                     ModuleManager moduleManager, Storage storage, ClientManager clientManager,
                      WebhookManager webhookManager, Logger logger) {
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
         this.moduleManager = moduleManager;
         this.storage = storage;
-        this.proxyPool = proxyPool;
         this.clientManager = clientManager;
         this.webhookManager = webhookManager;
         this.moduleLogger = new ModuleLogger(this, logger);
@@ -123,14 +120,6 @@ public abstract class Module {
      */
     public Storage getStorage() {
         return storage;
-    }
-
-    /**
-     * Server proxy pool
-     * @return proxy pool
-     */
-    public ProxyPool getProxyPool() {
-        return proxyPool;
     }
 
     /**
