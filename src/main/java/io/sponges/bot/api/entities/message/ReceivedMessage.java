@@ -1,6 +1,6 @@
 package io.sponges.bot.api.entities.message;
 
-public interface ReceivedMessage {
+public interface ReceivedMessage extends Message {
 
     void delete() throws CannotDeleteException;
 

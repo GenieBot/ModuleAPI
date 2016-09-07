@@ -1,5 +1,6 @@
 package io.sponges.bot.api.module;
 
+import io.sponges.bot.api.Logger;
 import io.sponges.bot.api.cmd.CommandManager;
 import io.sponges.bot.api.entities.manager.ClientManager;
 import io.sponges.bot.api.event.framework.EventManager;
@@ -30,7 +31,6 @@ public abstract class Module {
     public Module(String id, String version) {
         this.id = id.toLowerCase();
         this.version = version;
-        this.moduleLogger = new ModuleLogger(this);
     }
 
     /**
@@ -49,7 +49,7 @@ public abstract class Module {
      */
     public void init(Server server, EventManager eventManager, CommandManager commandManager,
                      ModuleManager moduleManager, Storage storage, ProxyPool proxyPool, ClientManager clientManager,
-                     WebhookManager webhookManager) {
+                     WebhookManager webhookManager, Logger logger) {
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
@@ -58,6 +58,7 @@ public abstract class Module {
         this.proxyPool = proxyPool;
         this.clientManager = clientManager;
         this.webhookManager = webhookManager;
+        this.moduleLogger = new ModuleLogger(this, logger);
     }
 
     /**
