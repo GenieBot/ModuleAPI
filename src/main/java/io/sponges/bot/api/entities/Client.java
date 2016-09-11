@@ -4,8 +4,6 @@ import io.sponges.bot.api.entities.data.ClientData;
 import io.sponges.bot.api.entities.manager.NetworkManager;
 import io.sponges.bot.api.storage.DataObject;
 
-import java.util.function.Consumer;
-
 public interface Client extends Entity {
 
     // TODO client load balancing, peers etc
@@ -19,9 +17,5 @@ public interface Client extends Entity {
     ClientData getClientData();
 
     DataObject getData();
-
-    void sendMessage(String message, Consumer<String> callback);
-
-    String sendMessageSync(String message);
 
 }

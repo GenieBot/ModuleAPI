@@ -3,7 +3,7 @@ package io.sponges.bot.api.storage;
 public class ModuleDataObject extends DataObject {
 
     public static final String MODULE_DATA_OBJECT_IDENTIFIER = "module_data_object";
-    private static final String IS_MODULE_ENABLED_KEY = "module_enabled";
+    private static final String MODULE_ENABLED_KEY = "module_enabled";
 
     private final String key;
 
@@ -16,11 +16,11 @@ public class ModuleDataObject extends DataObject {
     }
 
     public boolean isEnabled() {
-        return exists(IS_MODULE_ENABLED_KEY) && (boolean) get(IS_MODULE_ENABLED_KEY);
+        return exists(MODULE_ENABLED_KEY) && (boolean) get(MODULE_ENABLED_KEY);
     }
 
     public void setEnabled(boolean enabled) {
-        set(IS_MODULE_ENABLED_KEY, enabled);
+        set(MODULE_ENABLED_KEY, enabled);
     }
 
     @Override
