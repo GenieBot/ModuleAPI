@@ -5,17 +5,17 @@ import io.sponges.bot.api.cmd.CommandManager;
 import io.sponges.bot.api.entities.manager.ClientManager;
 import io.sponges.bot.api.event.framework.EventManager;
 import io.sponges.bot.api.server.Server;
-import io.sponges.bot.api.storage.Storage;
 import io.sponges.bot.api.webhook.WebhookManager;
 
 public abstract class Module {
+
+    // TODO system to track features added by a module and enable/disable/configure them
 
     private ModuleLogger moduleLogger;
     private Server server;
     private EventManager eventManager;
     private CommandManager commandManager;
     private ModuleManager moduleManager;
-    private Storage storage;
     private ClientManager clientManager;
     private WebhookManager webhookManager;
 
@@ -46,13 +46,12 @@ public abstract class Module {
      * TODO encapsulation of method
      */
     public void init(Server server, EventManager eventManager, CommandManager commandManager,
-                     ModuleManager moduleManager, Storage storage, ClientManager clientManager,
+                     ModuleManager moduleManager, ClientManager clientManager,
                      WebhookManager webhookManager, Logger logger) {
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
         this.moduleManager = moduleManager;
-        this.storage = storage;
         this.clientManager = clientManager;
         this.webhookManager = webhookManager;
         this.moduleLogger = new ModuleLogger(this, logger);
@@ -112,14 +111,6 @@ public abstract class Module {
      */
     public ModuleManager getModuleManager() {
         return moduleManager;
-    }
-
-    /**
-     * Module storage
-     * @return storage
-     */
-    public Storage getStorage() {
-        return storage;
     }
 
     /**

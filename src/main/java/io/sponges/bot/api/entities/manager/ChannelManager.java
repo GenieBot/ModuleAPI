@@ -1,11 +1,10 @@
 package io.sponges.bot.api.entities.manager;
 
 import io.sponges.bot.api.entities.Network;
-import io.sponges.bot.api.entities.User;
 import io.sponges.bot.api.entities.channel.Channel;
 
-import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Consumer;
 
 public interface ChannelManager {
@@ -14,14 +13,12 @@ public interface ChannelManager {
 
     Map<String, Channel> getChannels();
 
-    boolean isChannel(String id);
+    boolean isChannel(UUID id);
 
-    Channel getChannel(String id);
+    Channel getChannel(UUID id);
 
-    List<Channel> getChannels(User user);
+    void loadChannel(String sourceId, Consumer<Channel> callback);
 
-    void loadChannel(String channelId, Consumer<Channel> callback);
-
-    Channel loadChannelSync(String channelId);
+    Channel loadChannelSync(String sourceId); // TODO switch for Future<Channel>
 
 }

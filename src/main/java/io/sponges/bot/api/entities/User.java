@@ -1,22 +1,18 @@
 package io.sponges.bot.api.entities;
 
-import io.sponges.bot.api.entities.channel.Channel;
 import io.sponges.bot.api.entities.data.UserData;
-import io.sponges.bot.api.storage.DataObject;
 
-import java.util.List;
+import java.util.UUID;
 
 public interface User extends Entity {
 
-    String getId();
+    UUID getId();
+
+    String getSourceId();
     
     Network getNetwork();
 
-    List<Channel> getChannels();
-
     UserData getUserData();
-
-    DataObject getData();
 
     boolean isPlatformAdmin();
 

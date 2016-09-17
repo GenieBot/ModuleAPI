@@ -4,6 +4,7 @@ import io.sponges.bot.api.entities.Client;
 import io.sponges.bot.api.entities.Network;
 
 import java.util.Map;
+import java.util.UUID;
 import java.util.function.Consumer;
 
 public interface NetworkManager {
@@ -12,12 +13,12 @@ public interface NetworkManager {
 
     Client getClient();
 
-    boolean isNetwork(String id);
+    boolean isNetwork(UUID id);
 
-    Network getNetwork(String id);
+    Network getNetwork(UUID id);
 
-    void loadNetwork(String id, Consumer<Network> callback);
+    void loadNetwork(String sourceId, Consumer<Network> callback);
 
-    Network loadNetworkSync(String id);
+    Network loadNetworkSync(String sourceId); // TODO switch for Future<Network>
 
 }
