@@ -76,7 +76,7 @@ Registering the command:
 public void onEnable() {
     CommandManager manager = getCommandManager();
     MyCommand myCommand = new MyCommand();
-    manager.register(this, myCommand); // "this" is your module instance
+    manager.register(myCommand);
 }
 ```
 
@@ -84,8 +84,7 @@ public void onEnable() {
 Listening to an event:
 ```java
 EventManager manager = getEventManager();
-// "this" is your module instance. Replace SomeEvent with the event you want to listen to.
-manager.register(this, SomeEvent.class, event -> { 
+manager.register(SomeEvent.class, event -> {
     // your code goes here 
 });
 ```
