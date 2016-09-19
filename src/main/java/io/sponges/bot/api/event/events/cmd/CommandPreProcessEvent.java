@@ -10,7 +10,7 @@ public final class CommandPreProcessEvent extends CommandEvent {
     private final Command command;
 
     public CommandPreProcessEvent(CommandRequest commandRequest, String[] args, Command command) {
-        super(true);
+        super(true, commandRequest);
         this.commandRequest = commandRequest;
         this.args = args;
         this.command = command;
@@ -27,5 +27,4 @@ public final class CommandPreProcessEvent extends CommandEvent {
     public Command getCommand() {
         return command;
     }
-
 }

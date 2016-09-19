@@ -21,4 +21,7 @@ public interface NetworkManager {
 
     Network loadNetworkSync(String sourceId); // TODO switch for Future<Network>
 
+    // this will query the database for the source id
+    Network loadNetworkSync(UUID id);
+
 }

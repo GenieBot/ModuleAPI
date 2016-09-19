@@ -19,4 +19,6 @@ public interface UserManager {
     void loadUser(String sourceId, Consumer<User> callback);
 
     User loadUserSync(String sourceId); // TODO switch for Future<User>
+
+    User loadUserSync(UUID id);
 }

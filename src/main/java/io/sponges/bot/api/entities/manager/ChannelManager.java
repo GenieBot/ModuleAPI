@@ -21,4 +21,6 @@ public interface ChannelManager {
 
     Channel loadChannelSync(String sourceId); // TODO switch for Future<Channel>
 
+    Channel loadChannelSync(UUID id);
+
 }

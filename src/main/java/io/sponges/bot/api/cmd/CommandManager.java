@@ -1,24 +1,18 @@
 package io.sponges.bot.api.cmd;
 
-import io.sponges.bot.api.module.Module;
-
 import java.util.Collection;
 
 public interface CommandManager {
 
-    void registerCommand(Module module, Command command);
+    void registerCommand(Command command);
 
     void unregisterCommand(Command command);
 
-    void unregisterCommands(Module module);
+    void unregisterAllCommands();
 
     Collection<Command> getCommands();
 
-    boolean hasCommands(Module module);
-
-    Collection<Command> getCommands(Module module);
-
-    Collection<String> getNames();
+    Collection<Command> getAllCommands();
 
     Command getCommand(String name);
 

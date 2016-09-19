@@ -10,6 +10,7 @@ public final class CommandProcessedEvent extends CommandEvent {
     private final String[] args;
 
     public CommandProcessedEvent(Command command, CommandRequest commandRequest, String[] args) {
+        super(commandRequest);
         this.command = command;
         this.commandRequest = commandRequest;
         this.args = args;

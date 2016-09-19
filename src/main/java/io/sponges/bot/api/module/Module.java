@@ -11,6 +11,7 @@ public abstract class Module {
 
     // TODO system to track features added by a module and enable/disable/configure them
 
+    private int id = -1;
     private ModuleLogger moduleLogger;
     private Server server;
     private EventManager eventManager;
@@ -18,17 +19,21 @@ public abstract class Module {
     private ModuleManager moduleManager;
     private ClientManager clientManager;
     private WebhookManager webhookManager;
+    private ModuleData data;
 
-    private final String id, version;
+    private final String name, version;
+    private final boolean required;
 
-    /**
-     * Constructor for each module.
-     * @param id unique string for each module
-     * @param version version of module
-     */
-    public Module(String id, String version) {
-        this.id = id.toLowerCase();
+    public Module(String name, String version) {
+        this.name = name.toLowerCase();
         this.version = version;
+        this.required = false;
+    }
+
+    public Module(String name, String version, boolean required) {
+        this.name = name.toLowerCase();
+        this.version = version;
+        this.required = required;
     }
 
     /**
@@ -45,9 +50,10 @@ public abstract class Module {
      * Internal method invoked by the server to instantiate variables.
      * TODO encapsulation of method
      */
-    public void init(Server server, EventManager eventManager, CommandManager commandManager,
+    public void init(int id, Server server, EventManager eventManager, CommandManager commandManager,
                      ModuleManager moduleManager, ClientManager clientManager,
-                     WebhookManager webhookManager, Logger logger) {
+                     WebhookManager webhookManager, Logger logger, ModuleData data) {
+        this.id = id;
         this.server = server;
         this.eventManager = eventManager;
         this.commandManager = commandManager;
@@ -55,77 +61,54 @@ public abstract class Module {
         this.clientManager = clientManager;
         this.webhookManager = webhookManager;
         this.moduleLogger = new ModuleLogger(this, logger);
+        this.data = data;
     }
 
-    /**
-     * The id of the module
-     * @return module id
-     */
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    /**
-     * The module version
-     * @return version
-     */
+    public String getName() {
+        return name;
+    }
+
     public String getVersion() {
         return version;
     }
 
-    /**
-     * The module's logger instance
-     * @return logger
-     */
+    public boolean isRequired() {
+        return required;
+    }
+
     public ModuleLogger getLogger() {
         return moduleLogger;
     }
 
-    /**
-     * The central server instance interface
-     * @return server
-     */
     public Server getServer() {
         return server;
     }
 
-    /**
-     * The server event manager
-     * @return event manager
-     */
     public EventManager getEventManager() {
         return eventManager;
     }
 
-    /**
-     * The server command manager
-     * @return command manager
-     */
     public CommandManager getCommandManager() {
         return commandManager;
     }
 
-    /**
-     * The server module manager
-     * @return module manager
-     */
     public ModuleManager getModuleManager() {
         return moduleManager;
     }
 
-    /**
-     * Manager for connected clients
-     * @return client manager
-     */
     public ClientManager getClientManager() {
         return clientManager;
     }
 
-    /**
-     * Server webhook manager
-     * @return webhook manager
-     */
     public WebhookManager getWebhookManager() {
         return webhookManager;
+    }
+
+    public ModuleData getData() {
+        return data;
     }
 }

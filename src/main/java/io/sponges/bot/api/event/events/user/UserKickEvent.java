@@ -8,14 +8,13 @@ import io.sponges.bot.api.entities.channel.GroupChannel;
 public final class UserKickEvent extends UserRemoveEvent {
 
     private final Client client;
-    private final Network network;
     private final GroupChannel channel;
     private final User user;
     private final User initiator;
 
     public UserKickEvent(Client client, Network network, GroupChannel channel, User user, User initiator) {
+        super(network);
         this.client = client;
-        this.network = network;
         this.channel = channel;
         this.user = user;
         this.initiator = initiator;
@@ -23,10 +22,6 @@ public final class UserKickEvent extends UserRemoveEvent {
 
     public Client getClient() {
         return client;
-    }
-
-    public Network getNetwork() {
-        return network;
     }
 
     public GroupChannel getChannel() {

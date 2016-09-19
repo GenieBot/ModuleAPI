@@ -13,7 +13,7 @@ public final class ModuleLogger {
 
     public ModuleLogger(Module module, Logger logger) {
         this.logger = logger;
-        this.name = module.getId();
+        this.name = module.getName();
     }
 
     private String format(String message) {

@@ -2,6 +2,7 @@ package io.sponges.bot.api.entities;
 
 import io.sponges.bot.api.entities.data.NetworkData;
 import io.sponges.bot.api.entities.manager.ChannelManager;
+import io.sponges.bot.api.entities.manager.NetworkModuleManager;
 import io.sponges.bot.api.entities.manager.UserManager;
 
 import java.util.UUID;
@@ -19,4 +20,6 @@ public interface Network extends Entity {
     UserManager getUserManager();
 
     NetworkData getNetworkData();
+
+    NetworkModuleManager getModuleManager();
 }
