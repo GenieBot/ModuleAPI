@@ -24,4 +24,7 @@ public interface NetworkManager {
     // this will query the database for the source id
     Network loadNetworkSync(UUID id);
 
+    // this callback is called multiple times for each network
+    void loadAllNetworks(Consumer<Network> callback);
+
 }

@@ -1,5 +1,7 @@
 package io.sponges.bot.api.module;
 
+import io.sponges.bot.api.exception.ModuleNotFoundException;
+
 import java.util.Collection;
 
 public interface ModuleManager {
@@ -12,7 +14,7 @@ public interface ModuleManager {
 
     Module getModule(int id);
 
-    int getModuleId(String name);
+    int getModuleId(String name) throws ModuleNotFoundException;
 
     void reload();
 
